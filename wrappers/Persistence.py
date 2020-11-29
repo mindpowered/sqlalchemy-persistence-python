@@ -22,8 +22,9 @@ class Persistence:
 		args = [obj]
 		ret = None
 		def EnglishAuction_Auction_CreateNew_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Auction.CreateNew', args, EnglishAuction_Auction_CreateNew_Ret)
+		pybus.call('Persistence.EnglishAuction.Auction.CreateNew', args, EnglishAuction_Auction_CreateNew_Ret)
 		return ret
 
 	def EnglishAuction_Auction_FindById(self):
@@ -33,8 +34,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Auction_FindById_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Auction.FindById', args, EnglishAuction_Auction_FindById_Ret)
+		pybus.call('Persistence.EnglishAuction.Auction.FindById', args, EnglishAuction_Auction_FindById_Ret)
 
 	def EnglishAuction_Auction_FindStarting(self):
 		"""		
@@ -43,8 +45,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Auction_FindStarting_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Auction.FindStarting', args, EnglishAuction_Auction_FindStarting_Ret)
+		pybus.call('Persistence.EnglishAuction.Auction.FindStarting', args, EnglishAuction_Auction_FindStarting_Ret)
 
 	def EnglishAuction_Auction_FindEnding(self):
 		"""		
@@ -53,8 +56,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Auction_FindEnding_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Auction.FindEnding', args, EnglishAuction_Auction_FindEnding_Ret)
+		pybus.call('Persistence.EnglishAuction.Auction.FindEnding', args, EnglishAuction_Auction_FindEnding_Ret)
 
 	def EnglishAuction_Auction_FindOpen(self):
 		"""		
@@ -63,8 +67,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Auction_FindOpen_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Auction.FindOpen', args, EnglishAuction_Auction_FindOpen_Ret)
+		pybus.call('Persistence.EnglishAuction.Auction.FindOpen', args, EnglishAuction_Auction_FindOpen_Ret)
 
 	def EnglishAuction_Bid_CountForAuction(self):
 		"""		
@@ -73,8 +78,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Bid_CountForAuction_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Bid.CountForAuction', args, EnglishAuction_Bid_CountForAuction_Ret)
+		pybus.call('Persistence.EnglishAuction.Bid.CountForAuction', args, EnglishAuction_Bid_CountForAuction_Ret)
 
 	def EnglishAuction_Bid_FindByHighestPriceForAuction(self):
 		"""		
@@ -83,8 +89,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Bid_FindByHighestPriceForAuction_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Bid.FindByHighestPriceForAuction', args, EnglishAuction_Bid_FindByHighestPriceForAuction_Ret)
+		pybus.call('Persistence.EnglishAuction.Bid.FindByHighestPriceForAuction', args, EnglishAuction_Bid_FindByHighestPriceForAuction_Ret)
 
 	def EnglishAuction_Bid_New(self):
 		"""		
@@ -93,8 +100,9 @@ class Persistence:
 		args = []
 		ret = None
 		def EnglishAuction_Bid_New_Ret(async_ret):
+			nonlocal ret
 			ret = async_ret
-		ret = pybus.call('Persistence.EnglishAuction.Bid.New', args, EnglishAuction_Bid_New_Ret)
+		pybus.call('Persistence.EnglishAuction.Bid.New', args, EnglishAuction_Bid_New_Ret)
 
 
 
