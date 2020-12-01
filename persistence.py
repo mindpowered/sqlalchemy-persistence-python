@@ -54,9 +54,9 @@ class persistence_Persistence:
 		user_id = ''#o['user_id']
 		start = datetime.fromtimestamp(o['start'])
 		end = datetime.fromtimestamp(o['end'])
-		starting_price = o['starting_price']
-		reserve_price = o['reserve_price']
-		price_increment = o['price_increment']
+		starting_price = o['startingPrice']
+		reserve_price = o['reservePrice']
+		price_increment = o['priceIncrement']
 		session = self.Session()
 		new_auction = Auction(item_id=item_id, user_id=user_id, start=start, end=end, starting_price=starting_price, reserve_price=reserve_price, price_increment=price_increment)
 		session.add(new_auction)
