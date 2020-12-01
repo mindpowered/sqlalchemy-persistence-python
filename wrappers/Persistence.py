@@ -11,6 +11,31 @@ class Persistence:
 		bus = maglev.maglev_MagLev.getInstance("default")
 		lib = persistence.persistence_Persistence(bus)
 
+	def Setup(self, connect_str: str, connect_params: object):
+		"""		
+		Args:
+			connect_str (str):connection string
+			connect_params (object):connection parameters (database specific)
+		"""
+		pybus = maglev.maglev_MagLevPy.getInstance("default")
+		args = [connect_str, connect_params]
+		ret = None
+		def Setup_Ret(async_ret):
+			nonlocal ret
+			ret = async_ret
+		pybus.call('Persistence.Setup', args, Setup_Ret)
+
+	def EnglishAuction_Create(self):
+		"""		Create database tables for EnglishAuction
+		"""
+		pybus = maglev.maglev_MagLevPy.getInstance("default")
+		args = []
+		ret = None
+		def EnglishAuction_Create_Ret(async_ret):
+			nonlocal ret
+			ret = async_ret
+		pybus.call('Persistence.EnglishAuction.Create', args, EnglishAuction_Create_Ret)
+
 	def EnglishAuction_Auction_CreateNew(self, obj: object) -> str:
 		"""		
 		Args:

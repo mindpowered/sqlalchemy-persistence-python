@@ -39,6 +39,31 @@ class Persistence:
                 bus = maglev.maglev_MagLev.getInstance(&#34;default&#34;)
                 lib = persistence.persistence_Persistence(bus)
 
+        def Setup(self, connect_str: str, connect_params: object):
+                &#34;&#34;&#34;             
+                Args:
+                        connect_str (str):connection string
+                        connect_params (object):connection parameters (database specific)
+                &#34;&#34;&#34;
+                pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+                args = [connect_str, connect_params]
+                ret = None
+                def Setup_Ret(async_ret):
+                        nonlocal ret
+                        ret = async_ret
+                pybus.call(&#39;Persistence.Setup&#39;, args, Setup_Ret)
+
+        def EnglishAuction_Create(self):
+                &#34;&#34;&#34;             Create database tables for EnglishAuction
+                &#34;&#34;&#34;
+                pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+                args = []
+                ret = None
+                def EnglishAuction_Create_Ret(async_ret):
+                        nonlocal ret
+                        ret = async_ret
+                pybus.call(&#39;Persistence.EnglishAuction.Create&#39;, args, EnglishAuction_Create_Ret)
+
         def EnglishAuction_Auction_CreateNew(self, obj: object) -&gt; str:
                 &#34;&#34;&#34;             
                 Args:
@@ -158,6 +183,31 @@ class Persistence:
         def __init__(self):
                 bus = maglev.maglev_MagLev.getInstance(&#34;default&#34;)
                 lib = persistence.persistence_Persistence(bus)
+
+        def Setup(self, connect_str: str, connect_params: object):
+                &#34;&#34;&#34;             
+                Args:
+                        connect_str (str):connection string
+                        connect_params (object):connection parameters (database specific)
+                &#34;&#34;&#34;
+                pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+                args = [connect_str, connect_params]
+                ret = None
+                def Setup_Ret(async_ret):
+                        nonlocal ret
+                        ret = async_ret
+                pybus.call(&#39;Persistence.Setup&#39;, args, Setup_Ret)
+
+        def EnglishAuction_Create(self):
+                &#34;&#34;&#34;             Create database tables for EnglishAuction
+                &#34;&#34;&#34;
+                pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+                args = []
+                ret = None
+                def EnglishAuction_Create_Ret(async_ret):
+                        nonlocal ret
+                        ret = async_ret
+                pybus.call(&#39;Persistence.EnglishAuction.Create&#39;, args, EnglishAuction_Create_Ret)
 
         def EnglishAuction_Auction_CreateNew(self, obj: object) -&gt; str:
                 &#34;&#34;&#34;             
@@ -429,6 +479,53 @@ Returns:</p></div>
         pybus.call(&#39;Persistence.EnglishAuction.Bid.New&#39;, args, EnglishAuction_Bid_New_Ret)</code></pre>
 </details>
 </dd>
+<dt id="wrappers.Persistence.Persistence.EnglishAuction_Create"><code class="name flex">
+<span>def <span class="ident">EnglishAuction_Create</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create database tables for EnglishAuction</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def EnglishAuction_Create(self):
+        &#34;&#34;&#34;             Create database tables for EnglishAuction
+        &#34;&#34;&#34;
+        pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+        args = []
+        ret = None
+        def EnglishAuction_Create_Ret(async_ret):
+                nonlocal ret
+                ret = async_ret
+        pybus.call(&#39;Persistence.EnglishAuction.Create&#39;, args, EnglishAuction_Create_Ret)</code></pre>
+</details>
+</dd>
+<dt id="wrappers.Persistence.Persistence.Setup"><code class="name flex">
+<span>def <span class="ident">Setup</span></span>(<span>self, connect_str: str, connect_params: object)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="args">Args</h2>
+<p>connect_str (str):connection string
+connect_params (object):connection parameters (database specific)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Setup(self, connect_str: str, connect_params: object):
+        &#34;&#34;&#34;             
+        Args:
+                connect_str (str):connection string
+                connect_params (object):connection parameters (database specific)
+        &#34;&#34;&#34;
+        pybus = maglev.maglev_MagLevPy.getInstance(&#34;default&#34;)
+        args = [connect_str, connect_params]
+        ret = None
+        def Setup_Ret(async_ret):
+                nonlocal ret
+                ret = async_ret
+        pybus.call(&#39;Persistence.Setup&#39;, args, Setup_Ret)</code></pre>
+</details>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -458,6 +555,8 @@ Returns:</p></div>
 <li><code><a title="wrappers.Persistence.Persistence.EnglishAuction_Bid_CountForAuction" href="#wrappers.Persistence.Persistence.EnglishAuction_Bid_CountForAuction">EnglishAuction_Bid_CountForAuction</a></code></li>
 <li><code><a title="wrappers.Persistence.Persistence.EnglishAuction_Bid_FindByHighestPriceForAuction" href="#wrappers.Persistence.Persistence.EnglishAuction_Bid_FindByHighestPriceForAuction">EnglishAuction_Bid_FindByHighestPriceForAuction</a></code></li>
 <li><code><a title="wrappers.Persistence.Persistence.EnglishAuction_Bid_New" href="#wrappers.Persistence.Persistence.EnglishAuction_Bid_New">EnglishAuction_Bid_New</a></code></li>
+<li><code><a title="wrappers.Persistence.Persistence.EnglishAuction_Create" href="#wrappers.Persistence.Persistence.EnglishAuction_Create">EnglishAuction_Create</a></code></li>
+<li><code><a title="wrappers.Persistence.Persistence.Setup" href="#wrappers.Persistence.Persistence.Setup">Setup</a></code></li>
 </ul>
 </li>
 </ul>
