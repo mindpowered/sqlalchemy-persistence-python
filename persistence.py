@@ -78,14 +78,21 @@ class persistence_Persistence:
 			return row
 		return None
 	def Persistence_EnglishAuction_Auction_FindStarting(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Auction.FindStarting')
 	def Persistence_EnglishAuction_Auction_FindEnding(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Auction.FindEnding')
 	def Persistence_EnglishAuction_Auction_FindOpen(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Auction.FindOpen')
 	def Persistence_EnglishAuction_Bid_CountForAuction(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Bid.CountForAuction')
 	def Persistence_EnglishAuction_Bid_FindByHighestPriceForAuction(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Bid.FindByHighestPriceForAuction')
 	def Persistence_EnglishAuction_Bid_New(self, args):
-		return None
+		self.noimpl('Persistence.EnglishAuction.Bid.New')
+	def noimpl(self, method):
+		data = ["_not_implemented_", "sql-persistence", "python", method]
+		def donothing():
+			pass
+		self.pybus.call("MindPowered.Telemetry.Send", data, donothing);
+		msg = "You are trying to use the '" + method + "' method but it's not quite done yet. Please email support@mindpowered.dev to find out when it will be done."
+		raise Exception(msg)
