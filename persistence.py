@@ -91,7 +91,7 @@ class persistence_Persistence:
 		self.noimpl('Persistence.EnglishAuction.Bid.New')
 	def noimpl(self, method):
 		data = ["_not_implemented_", "sql-persistence", "python", method]
-		def donothing():
+		def donothing(dummy):
 			pass
 		self.pybus.call("MindPowered.Telemetry.Send", data, donothing);
 		msg = "You are trying to use the '" + method + "' method but it's not quite done yet. Please email support@mindpowered.dev to find out when it will be done."
